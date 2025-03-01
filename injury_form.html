@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injured Person Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container:hover{
+            background-color: rgb(135, 153, 207);
+        }
+        h1 {
+            color: green;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 10px;
+            display: block;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            padding-right: 8px;
+            margin: 10px 0;
+           margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color:green;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: green;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Injured Person Report Form</h1>
+        <form action="/submit-injury-report" method="post">
+            <!-- Injured Person Details -->
+            <label for="name">Full Name of Injured Person:</label>
+            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter contact number" required>
+
+            <!-- Incident Details -->
+            <label for="incident-date">Date and Time of Incident:</label>
+            <input type="datetime-local" id="incident-date" name="incident-date" required>
+
+            <label for="location">Location of Incident:</label>
+            <input type="text" id="location" name="location" placeholder="Enter the location of the incident" required>
+
+            <label for="injury-type">Type of Injury:</label>
+            <textarea id="injury-type" name="injury-type" rows="3" placeholder="" required></textarea>
+
+            <label for="incident-description">Description of the Incident:</label>
+            <textarea id="incident-description" name="incident-description" rows="4" placeholder="" required></textarea>
+
+            <!-- Actions Taken -->
+            <label for="first-aid">Was First Aid Administered?</label>
+            <select id="first-aid" name="first-aid" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="first-aid-details">If Yes, Describe First Aid Administered:</label>
+            <textarea id="first-aid-details" name="first-aid-details" rows="3" placeholder=""></textarea>
+
+            <!-- Witness Information -->
+            <label for="witnesses">Names of Witnesses (if any):</label>
+            <textarea id="witnesses" name="witnesses" rows="3" placeholder=""></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Report</button>
+        </form>
+        <footer>
+            Thank you for reporting the incident. This information helps improve workplace safety.
+        </footer>
+    </div>
+</body>
+</html>
